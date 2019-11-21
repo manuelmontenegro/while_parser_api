@@ -24,6 +24,5 @@ defmodule WhileParserApiWeb.Router do
     pipe_through :api
 
     post "/parse", ParseController, :parse
-    get "/parse", ParseController, :parse
   end
 end

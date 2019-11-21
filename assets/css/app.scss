@@ -1,0 +1,23 @@
+/* This file is for your main application css. */
+
+
+@import "custom";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../node_modules/codemirror/lib/codemirror.css";
+
+textarea.code {
+  width: 100%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.CodeMirror {
+  width: 100%;
+  border: 1px solid #D0D0D0;
+  height: auto;
+}
+
+#result {
+  display: none;
+}
+
+/* @import "./phoenix.css"; */

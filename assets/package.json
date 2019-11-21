@@ -13,12 +13,21 @@
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "babel-loader": "^8.0.0",
+    "bootstrap": "^4.3.1",
+    "codemirror": "^5.49.2",
     "copy-webpack-plugin": "^4.5.0",
     "css-loader": "^2.1.1",
+    "fibers": "^4.0.2",
+    "jquery": "^3.4.1",
+    "jquery-ui": "^1.12.1",
     "mini-css-extract-plugin": "^0.4.0",
+    "node-sass": "^4.13.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "popper.js": "^1.16.0",
+    "sass": "^1.23.7",
+    "sass-loader": "^8.0.0",
     "terser-webpack-plugin": "^1.1.0",
-    "webpack": "4.4.0",
+    "webpack": "^4.41.2",
     "webpack-cli": "^3.3.2"
   }
 }

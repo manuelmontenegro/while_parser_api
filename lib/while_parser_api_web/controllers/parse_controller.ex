@@ -2,8 +2,6 @@ defmodule WhileParserApiWeb.ParseController do
   use WhileParserApiWeb, :controller
 
   def parse(conn, args) do
-    IO.puts("Received: #{inspect(args)}")
-
     case WhileParserApi.parse_while(args) do
       {:ok, result} ->
         render(conn, "result.json", body: result)

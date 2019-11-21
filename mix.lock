@@ -14,5 +14,5 @@
   "plug_crypto": {:hex, :plug_crypto, "1.0.0", "18e49317d3fa343f24620ed22795ec29d4a5e602d52d1513ccea0b07d8ea7d4d", [:mix], [], "hexpm"},
   "ranch": {:hex, :ranch, "1.7.1", "6b1fab51b49196860b733a49c07604465a47bdb78aa10c1c16a3d199f7f8c881", [:rebar3], [], "hexpm"},
   "telemetry": {:hex, :telemetry, "0.4.0", "8339bee3fa8b91cb84d14c2935f8ecf399ccd87301ad6da6b71c09553834b2ab", [:rebar3], [], "hexpm"},
-  "while_parser": {:git, "https://github.com/manuelmontenegro/while_parser.git", "cb38f93c5b341be07efb2624fc0ef6569c1bae57", []},
+  "while_parser": {:git, "https://github.com/manuelmontenegro/while_parser.git", "4ec4773816c3507e7e6e1d7147b6ab17cf73d64b", []},
 }

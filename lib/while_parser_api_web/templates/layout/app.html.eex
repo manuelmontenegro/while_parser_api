@@ -4,27 +4,67 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>WhileParserApi · Phoenix Framework</title>
+    <title>While language parser</title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
   </head>
   <body>
-    <header>
-      <section class="container">
-        <nav role="navigation">
-          <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
-          </ul>
-        </nav>
-        <a href="http://phoenixframework.org/" class="phx-logo">
-          <img src="<%= Routes.static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
-        </a>
-      </section>
-    </header>
-    <main role="main" class="container">
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-      <%= render @view_module, @view_template, assigns %>
-    </main>
+    <div class="container">
+      <div class="row" style="margin-top: 20px">
+        <div class="col-sm-6">
+        <h1>A parser for <em>While</em></h1>
+        </div>
+        <div class="col-sm-6 text-right">
+        <p>Static Analysis of Programs and Constraint Solving<br>
+        Master's Degree in Formal Methods in Computer Science<br>
+        &copy;2019 Manuel Montenegro</p>
+      </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-sm-12">
+        <p>Enter the <em>While</em> program to be parsed and click the <em>Parse</em> button below:</p>
+        </div>
+        <div class="col-sm-12" style="margin-bottom: 10px;">
+          <textarea class="code" placeholder="Enter your code here" id="sourceCode">
+function fib(x :: int) ret (y :: int)
+  if x <= 0 then
+    y := 0
+  else
+    if x <= 1 then
+      y := 1
+    else
+      begin
+        var f1 := 0;
+        var f2 := 0;
+        f1 := fib(x - 1);
+        f2 := fib(x - 2);
+        y := f1 + f2;
+      end
+    end
+  end
+end
+
+z := fib(4);</textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <button type="button" class="btn-primary btn" id="parseButton">Parse!</button>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:1em" id="result">
+        <div class="card-header">
+          Featured
+        </div>
+        <div class="card-body">
+          <pre class="pre-scrollable"><code id="resultCode"></code></pre>
+        </div>
+      </div>
+      
+    </div>
+    <%= render @view_module, @view_template, assigns %>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
