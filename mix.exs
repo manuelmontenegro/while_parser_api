@@ -9,7 +9,13 @@ defmodule WhileParserApi.MixProject do
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      releases: [
+        demo: [
+          include_executables_for: [:unix],
+          applications: [while_parser_api: :permanent]
+        ]
+      ]
     ]
   end
 

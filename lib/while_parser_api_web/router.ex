@@ -20,7 +20,10 @@ defmodule WhileParserApiWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", WhileParserApiWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", WhileParserApiWeb do
+    pipe_through :api
+
+    post "/parse", ParseController, :parse
+    get "/parse", ParseController, :parse
+  end
 end
