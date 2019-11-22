@@ -11,7 +11,7 @@ defmodule WhileParserApi.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       releases: [
-        demo: [
+        while_parser_api: [
           include_executables_for: [:unix],
           applications: [while_parser_api: :permanent]
         ]
