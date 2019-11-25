@@ -92,7 +92,7 @@ else:
 
 ### JSON-based AST representation
 
-Please read the [textual representation](https://github.com/manuelmontenegro/while_parser/repo/blob/master/Syntax.md) first.
+Please read the [textual representation](https://github.com/manuelmontenegro/while_parser/blob/master/Syntax.md) first.
 
 Each node in the abstract syntax tree is represented as a JSON object containing four fields:
 
