@@ -97,11 +97,11 @@ Please read the [textual representation](https://github.com/manuelmontenegro/whi
 Each node in the abstract syntax tree is represented as a JSON object containing four fields:
 
 * `category`: It is a string containing the syntactic category of the node. It can be one of `exp` (expression), `stm` (statement), `program`, `declaration`, or `type`. 
-* `category_sub`: It contains subcategory of the node. For example, inside the `stm` category this field may contain the values `if` (conditional statement), `funapp` (function call), `assignment`, etc.
-* `line`: An integer containing the line number corresponding to that node, as it occurs in the source code given as input.
-* `options`. A JSON object with the parameters specific to each subcategory. For example, in an `assignment` we have two options: `lhs` and `rhs` which respectively denote the variable being assigned to, and the expression to be evaluated and assigned to that variable.
+* `category_sub`: It contains the subcategory of the node. For example, inside the `stm` category this field may contain the values `if` (conditional statement), `funapp` (function call), `assignment`, etc.
+* `line`: An integer containing the line number corresponding to that node in the source code given as input.
+* `options`. A JSON object with the parameters specific to each subcategory. For example, in an `assignment` we have two options, `lhs` and `rhs`, which respectively denote the variable being assigned to, and the expression that occurs at the right-hand side of the `:=` sign.
 
-The following table summarizes the different syntactic categories, which the options supported by each.
+The following table summarizes the different syntactic categories, with the options supported by each.
 
 | Category      | Subcategory        | Description                                     | Supported options                                            |
 | ------------- | ------------------ | ----------------------------------------------- | ------------------------------------------------------------ |
