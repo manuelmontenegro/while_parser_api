@@ -128,7 +128,7 @@ The following table summarizes the different syntactic categories, with the opti
 | `stm`         | `block`            | Scoped block (`begin`...`end`)                  | `decls` (list of variable declarations), `body` (list of statements) |
 | `stm`         | `ifnil`            | Conditional for lists                           | `variable` (string), `then` (list of statements), `else` (list of statements). |
 | `program`     | `program`          | Top-level program                               | `functions` (list of function declarations), `main_stm` (list of statements) |
-| `declaration` | `fun_decl`         | Function declaration                            | `function_name` (string), `params` (list of parameter declarations), `returns` (variable declaration), `body` (list of statements) |
+| `declaration` | `fun_decl`         | Function declaration                            | `function_name` (string), `params` (list of parameter declarations), `returns` (singleton list of variable declarations), `body` (list of statements) |
 | `declaration` | `var_decl`         | Variable declaration                            | `lhs` (string), `rhs` (expression), `type` (type, optional)  |
 | `declaration` | `param_decl`       | Parameter declaration                           | `variable` (string), `type` (type, optional).                |
 | `type`        | `int`              |                                                 |                                                              |
