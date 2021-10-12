@@ -27,11 +27,16 @@ let cm = null;
 $(document).ready(() => {
   let sourceCode = document.getElementById("sourceCode");
   cm = CodeMirror.fromTextArea(sourceCode, {lineNumbers: true, mode: "text/x-pascal"});
-  $("#parseButton").click(doParse);
+  $("#parseButton").on("click", doParse);
+  $("#cfgButton").on("click", doParse);
 });
 
-function doParse() {
+function doParse(evt) {
   let code = cm.getValue().trim();
+  let cfg = false;
+  if (this.id == "cfgButton") {
+    cfg = true;
+  }
   let resultPane = $("#result");
   resultPane.removeClass("border-danger");
   resultPane.children(".card-header").removeClass("bg-danger text-white").text("Parsing...");
@@ -43,7 +48,8 @@ function doParse() {
     data: {
       while_code: code,
       as_text: true,
-      pretty: true
+      pretty: true,
+      cfg: cfg
     },
     success: (data, status, jqXHR) => {
       if (data.ok) {

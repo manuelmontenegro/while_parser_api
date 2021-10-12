@@ -4,7 +4,7 @@ defmodule WhileParserApi.MixProject do
   def project do
     [
       app: :while_parser_api,
-      version: "0.1.0",
+      version: "0.3.1",
       elixir: "~> 1.5",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
@@ -45,7 +45,7 @@ defmodule WhileParserApi.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:while_parser, github: "manuelmontenegro/while_parser"}
+      {:while_parser, github: "manuelmontenegro/while_parser", tag: "v0.3.1"}
     ]
   end
 end

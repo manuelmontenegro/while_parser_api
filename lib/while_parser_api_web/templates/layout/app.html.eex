@@ -49,10 +49,12 @@ z := fib(4);</textarea>
       </div>
 
       <div class="row">
-        <div class="col-sm-12">
-          <button type="button" class="btn-primary btn" id="parseButton">Parse!</button>
+        <div class="col-sm-6">
+          <button type="button" class="btn-primary btn" id="parseButton">Parse whole program</button>
+          <button type="button" class="btn-primary btn" id="cfgButton">Compute CFG of main program</button>
         </div>
       </div>
+
 
       <div class="card" style="margin-top:1em" id="result">
         <div class="card-header">
