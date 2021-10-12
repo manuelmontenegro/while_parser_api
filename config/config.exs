@@ -12,7 +12,8 @@ config :while_parser_api, WhileParserApiWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "8jlLi12FUxmXovzwm7paM4haczSK1zAEhHMPJhmu09fIlBzyPH0R7voGUUnK8yJk",
   render_errors: [view: WhileParserApiWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: WhileParserApi.PubSub, adapter: Phoenix.PubSub.PG2]
+  #pubsub: [name: WhileParserApi.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub_server: WhileParserApi.PubSub
 
 # Configures Elixir's Logger
 config :logger, :console,

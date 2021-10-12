@@ -9,9 +9,10 @@ defmodule WhileParserApi.Application do
     # List all child processes to be supervised
     children = [
       # Start the endpoint when the application starts
-      WhileParserApiWeb.Endpoint
+      WhileParserApiWeb.Endpoint,
       # Starts a worker by calling: WhileParserApi.Worker.start_link(arg)
       # {WhileParserApi.Worker, arg},
+      {Phoenix.PubSub, [name: WhileParserApi.PubSub, adapter: Phoenix.PubSub.PG2]}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
