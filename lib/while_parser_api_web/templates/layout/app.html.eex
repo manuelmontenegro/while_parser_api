@@ -13,13 +13,13 @@
         <div class="col-sm-6">
         <h1>A parser for <em>While</em></h1>
         </div>
-        <div class="col-sm-6 text-right">
+        <div class="col-sm-6 text-end">
         <p>Static Analysis of Programs and Constraint Solving<br>
         Master's Degree in Formal Methods in Computer Science<br>
-        &copy;2020 Manuel Montenegro</p>
+        &copy;2021 Manuel Montenegro</p>
       </div>
       </div>
-      
+
       <div class="row">
         <div class="col-sm-12">
         <p>Enter the <em>While</em> program to be parsed and click the <em>Parse</em> button below:</p>
@@ -62,7 +62,7 @@ z := fib(4);</textarea>
           <pre class="pre-scrollable"><code id="resultCode"></code></pre>
         </div>
       </div>
-      
+
     </div>
     <%= @inner_content %>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
