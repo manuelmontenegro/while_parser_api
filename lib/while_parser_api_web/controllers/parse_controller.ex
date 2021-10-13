@@ -4,7 +4,7 @@ defmodule WhileParserApiWeb.ParseController do
   def parse(conn, %{"cfg" => "true"} = args) do
     case WhileParserApi.parse_while_cfg(args) do
       {:ok, result, start} ->
-        render(conn, "result.json", body: result, start_label: start)
+        render(conn, "cfg.json", body: result, start_label: start)
 
       {:error, {:unsupported, {_, _, line_no, _}}} ->
         render(conn, "error_cfg.json", line_no: line_no)
