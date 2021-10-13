@@ -33,7 +33,7 @@ It returns a JSON object with the following fields:
 
 ### Example
 
-The following example shows how to issue a request to the API from Python 3.
+The following function shows how to issue a request to the API from Python 3.
 
 ```python
 import http.client
@@ -44,22 +44,26 @@ SERVER_NAME = 'dalila.sip.ucm.es:4000'
 API_URL = '/api/parse'
 
 
-def send_request(while_code):
+def send_request(while_code, *, cfg=False):
   conn = http.client.HTTPConnection(SERVER_NAME)
   params = urllib.parse.urlencode({
-    'while_code': while_code
+    'while_code': while_code,
+    'cfg': 'true' if cfg else 'false'
   })
   headers = {
     'Content-type': 'application/x-www-form-urlencoded',
     'Accept': 'application/json'
   }
+
   conn.request('POST', API_URL, params, headers)
   response = conn.getresponse()
   result_json = json.loads(response.read())
   return (response.status, result_json)
+```
+
+For example, to obtain the AST of a program:
   
-  
- 
+```python 
 status, parsed_program = send_request("""
     function fib(x :: int) ret (y :: int)
       if x <= 0 then
@@ -91,6 +95,29 @@ else:
       		parsed_program['msg'])
   )
 ```
+
+If you want to obtain a CFG from a program, you can call `send_request` as follows:
+
+```python
+status, parsed_program = send_request("""
+    c := 10;
+    y := 1;
+    while 1 <= c do
+      y := y * c;
+      c := c - 1;
+    end;
+    res := y;
+  """, cfg=True)
+
+print('Status code:', status)
+  
+if parsed_program['ok']:
+  print(parsed_program['body'])
+  print(parsed_program['start_label'])
+else:
+  print('Error at line {}: {}'.format(parsed_program['line_no'], parsed_program['msg']))
+```
+
 
 ### JSON-based AST representation
 
