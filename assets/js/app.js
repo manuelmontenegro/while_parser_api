@@ -44,7 +44,7 @@ function doParse(evt) {
   resultPane.show();
   $.ajax({
     method: "POST",
-    url: "./api/parse",
+    url: "/while_parser/api/parse",
     data: {
       while_code: code,
       as_text: true,

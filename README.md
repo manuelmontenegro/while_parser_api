@@ -41,7 +41,7 @@ import urllib.parse
 import json
 
 SERVER_NAME = 'dalila.sip.ucm.es:4000'
-API_URL = '/api/parse'
+API_URL = '/while_parser/api/parse'
 
 
 def send_request(while_code, *, cfg=False):

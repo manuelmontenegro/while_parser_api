@@ -13,14 +13,14 @@ defmodule WhileParserApiWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", WhileParserApiWeb do
+  scope "/while_parser", WhileParserApiWeb do
     pipe_through :browser
 
     get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.
-  scope "/api", WhileParserApiWeb do
+  scope "/while_parser/api", WhileParserApiWeb do
     pipe_through :api
 
     post "/parse", ParseController, :parse
