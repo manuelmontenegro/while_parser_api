@@ -21,11 +21,13 @@ POST http://dalila.sip.ucm.es:4000/api/parse
 ```
 
 The body of the HTTP request has to contain the parameter `while_code` associated with the source code of the while program to be parsed.
+Optionally, a `cfg` parameter can be set to `true` in obtain a Control Flow Graph of the main program. If `cfg` is not set (or set to a value different from `true`) the AST of the whole program would be returned.
 
 It returns a JSON object with the following fields:
 
 * `ok`: It takes the value `true` of `false` and indicates whether the parsing was successful or not.
 * `body`: In the case in which `ok` takes the value `true`, this field contains the JSON representation of the program (see the description below)
+* `start_label`: If the `cfg` parameter is set to `true`, this field would contain the label of the initial block of the program.
 * `msg`: In the case in which `ok` is bound to `false`, this field contains a string with the corresponding parser error.
 * `line_no`: In the case in which `ok` is bound to `false`, this field contains the line number in the input source code in which parsing failed.
 
@@ -137,3 +139,18 @@ The following table summarizes the different syntactic categories, with the opti
 | `type`        | `list`             | List type `[t]`                                 | `elements` (type)                                            |
 | `type`        | `non_empty_list`   | Non-empty list type `[t]+`                      | `elements` (type)                                            |
 
+### JSON-based CFG representation
+
+If `cfg` is set to `true`, the `result` field contains a list of CFG blocks. Each block contains four fields:
+
+* `type`: determines the contents of the block. It may be `"assignment"`, `"skip"`, or `"condition"`.
+* `label`: an integer number that identifies the block.
+* `succs`: list of integer numbers that contains the labels of the successors of the block.
+* `contents`: contents of the block (see table below).
+
+
+| Type         | `contents` field |
+| ------------ | ---------------- |
+| `skip`       | empty object     |
+| `assignment` | object with two fields: `lhs` (variable being assigned to) and `rhs` (expression AST) |
+| `condition`  | object with one field: `condition` (which is an AST) |
