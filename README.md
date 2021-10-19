@@ -142,7 +142,7 @@ The following table summarizes the different syntactic categories, with the opti
 | `exp`         | `leq`              | Comparison: `lhs <= rhs`                        | `lhs`, `rhs` denoting each operand.                          |
 | `exp`         | `eq`               | Comparison: `lhs == rhs`                        | `lhs`, `rhs` denoting each operand.                          |
 | `exp`         | `and`              | Conjunction: `lhs && rhs`                       | `lhs`, `rhs` denoting each operand.                          |
-| `exp`         | `or`               | Disjunction: `lhs || rhs`                       | `lhs`, `rhs` denoting each operand.                          |
+| `exp`         | `or`               | Disjunction: `lhs \|\| rhs`                       | `lhs`, `rhs` denoting each operand.                          |
 | `exp`         | `conditional`      | Conditional expression: `condition ? if : else` | `condition`, `if`, `else`                                    |
 | `exp`         | `tuple`            | Tuple construction: `(exp1, ..., expn)`         | `components` with a list of subexpressions.                  |
 | `exp`         | `hd`               | Head of a list: `l.hd`                          | `lhs` with the operand.                                      |
