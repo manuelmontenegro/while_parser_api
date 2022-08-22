@@ -21,7 +21,7 @@
     "jquery": "^3.6.0",
     "jquery-ui": "^1.13.0",
     "mini-css-extract-plugin": "^2.4.2",
-    "node-sass": "^6.0.1",
+    "node-sass": "^7.0.0",
     "css-minimizer-webpack-plugin": "^3.1.1",
     "popper.js": "^1.16.0",
     "sass": "^1.42.1",
